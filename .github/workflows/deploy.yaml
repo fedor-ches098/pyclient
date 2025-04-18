@@ -23,3 +23,6 @@ jobs:
             docker push ghcr.io/fedor-ches098/serverpy:latest
             docker build ./client --tag ghcr.io/fedor-ches098/clientpy:latest
             docker push ghcr.io/fedor-ches098/clientpy:latest
+            
+      - name: Run docker compose
+        run: docker-compose up -d
