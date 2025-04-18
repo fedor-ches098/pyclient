@@ -16,6 +16,9 @@ jobs:
           registry: ${{ secrets.GHCR_REGISTRY }}
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
+      
+      - name: Setup QEMU
+        uses: docker/setup-qemu-action@v3
 
       - name: Build Images
         run: |
