@@ -19,10 +19,10 @@ jobs:
 
       - name: Build Images
         run: |
-            docker build ./server --tag ghcr.io/fedor-ches098/serverpy:latest
-            docker push ghcr.io/fedor-ches098/serverpy:latest
-            docker build ./client --tag ghcr.io/fedor-ches098/clientpy:latest
-            docker push ghcr.io/fedor-ches098/clientpy:latest
+            docker build ./server --tag ghcr.io/${{ secrets.GHCR_USERNAME }}/serverpy:latest
+            docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/serverpy:latest
+            docker build ./client --tag ghcr.io/${{ secrets.GHCR_USERNAME }}/clientpy:latest
+            docker push ghcr.io/${{ secrets.GHCR_USERNAME }}/clientpy:latest
             
       - name: Run docker compose
         run: docker compose up -d
