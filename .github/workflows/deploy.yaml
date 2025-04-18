@@ -16,9 +16,6 @@ jobs:
           registry: ${{ secrets.GHCR_REGISTRY }}
           username: ${{ secrets.GHCR_USERNAME }}
           password: ${{ secrets.GHCR_TOKEN }}
-      
-      - name: Check docker compose version
-        run: docker compose --version
 
       - name: Build Images
         run: |
